@@ -158,6 +158,57 @@ header {
 }
 
 .banner-box {
-    background-image: url();
+    background-image: url(../img/tasty.png);
     margin-top: 140px;
+    background-size: cover;
+    color: #FFFFFF;
+    background-position: center center;
+    background-repeat: no-repeat;
+    text-align: left;
+    padding-top: 100px;
+    padding-bottom: 120px;
+    padding-left: 100px;
+}
+
+.banner-title {
+    font-weight: 900;
+    font-size: 60px;
+    margin-top: 0;
+    margin-bottom: 10px
+}
+
+.banner-title span{
+    font-family: 'Open Sans', sans-serif;
+    background-color: #F37335;
+    border-radius: 14px;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
+    max-width: 95px;
+    padding: 5px 0;
+    margin-bottom: 9px;
+}
+
+.banner-text {
+    color: #FAF9F9;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 160%;
+    max-width: 353px;
+    margin-bottom: 33px;
+}
+
+
+.banner-link {
+    background-color: #FBB731;
+    border-radius: 5px;
+    color: #1E2F40;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 20px 26px;
 }
