@@ -165,30 +165,29 @@ header {
     background-position: center center;
     background-repeat: no-repeat;
     text-align: left;
-    padding-top: 100px;
-    padding-bottom: 120px;
-    padding-left: 100px;
+    padding: 100px 100px 120px;
+    margin-bottom: 100px;
 }
 
 .banner-title {
     font-weight: 900;
     font-size: 60px;
-    margin-top: 0;
-    margin-bottom: 10px
+    margin-top: 0; /*title по умолчанию имеет отступ сверху и снизу. Поэтому это значение нужно обнулить*/
+    margin-bottom: 12px; /*После этого устанавливается то значение, которое необходимо для сдвига текста*/
 }
 
 .banner-title span{
-    font-family: 'Open Sans', sans-serif;
-    background-color: #F37335;
-    border-radius: 14px;
-    font-weight: 600;
+    font-family: 'Open Sans', sans-serif; /*Шрифт*/
+    background-color: #F37335; /*Цвет фона*/
+    border-radius: 14px; /*Для того, чтобы сделать круглую кнопку*/
+    font-weight: 600; /*Жирность шрифта, есть в фигме*/
     font-size: 14px;
-    text-transform: uppercase;
-    text-align: center;
-    display: block;
-    max-width: 95px;
+    text-transform: uppercase; /*Для того, чтобы поставить все буквы заглавными*/
+    display: block; /*В данном случае, для того, чтобы строчный элемент стал блочным*/
+    max-width: 96px; /*Ограничивает значение максимальной ширины для кнопки, берется из фигмы*/
+    text-align: center; /*Надпись в кнопке стремитя к центру, значение используется, для того, чтобы это поправить*/
     padding: 5px 0;
-    margin-bottom: 9px;
+    margin-bottom: 9px; /*Для того, чтобы сделать небольшое расстояние между скидка и -30*/
 }
 
 .banner-text {
@@ -199,16 +198,187 @@ header {
     line-height: 160%;
     max-width: 353px;
     margin-bottom: 33px;
+    margin-top: 0; /*чтобы удобнее было вычислить расстояние между верхним блоком*/
 }
 
 
 .banner-link {
     background-color: #FBB731;
-    border-radius: 5px;
+    border-radius: 5px; /*Для того, чтобы закруглить кнопку. Значение можно найти в фигме*/
     color: #1E2F40;
     font-weight: 700;
     font-size: 14px;
-    text-decoration: none;
+    text-decoration: none; /*Убирает нижнее подчеркивание*/
+    text-transform: uppercase; /*все буквы заглавные*/
+    padding: 20px 27px; /*отступы для кнопки вверх-вниз и вправо-влево*/
+}
+
+.menu-header {
+    display: flex; /*элементы становятся рядом друг с другом. Были один под другим*/
+    align-items: center; /*элементы ставит по центру*/
+    justify-content: space-between; /*делает одинаковое расстояние между элементами, то есть разводит в разные стороны*/
+    margin-bottom: 34px;
+}
+
+.menu-title {
+    font-size: 44px; /*размер шрифта*/
+    font-weight: 700; /*жирность шрифта, или начертание*/
+    /*Nanito Sans используется, поэтому подключать ничего не нужно*/
+    text-transform: uppercase; /*все буквы заглавные*/
+    color: #1B2A49; /*цвет шрифта*/
+    margin: 0;
+}
+
+.menu-select {
+    border: 1px solid #DEDEDE; /*толщина и цвет рамки*/
+    padding: 13px 30px; /*отступы*/
+    border-radius: 22px; /*закругление*/
+    color: #443737;
+    font-size: 15px; /*размер текста*/
+    appearance: none; /*убирает стрелочку из выпадашки*/
+    flex-basis: 279px; /*устанавливаем максимальную ширину через флексбокс*/
+    /*стрелочку сохраняю отдельно в svg формате*/
+    background-image: url(../img/arrow.svg); /*добавил стрелочку*/
+    background-size: 12.79px 7.75px; /*указываем размер стрелочки, из  фигмы*/
+    background-repeat: no-repeat; /*оставляет только одну стрелочку, так как их изначально было много*/
+    background-position: 89% center; /*стрелочка встала не там, где нужно, поэтому указываем ее положение по оси x и y*/
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /*делаю 3 колонки*/
+    gap: 20px; /*рассточние между ячейками*/
+    margin-bottom: 100px; /*позволяет делать нижний отступ*/
+    gap: 50px 20px; /*расстояние между блоками сверху-вниз и побокам*/
+}
+
+.menu-grid-cover {
+width: 100%; /*ширина*/
+height: 430px; /*высота*/
+position: relative;
+overflow: hidden; /*картинка не будет вылазить за назначенные границы*/
+margin-bottom: 23px;
+}
+
+.menu-grid-cover img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    width: 100%;
+    height: 430px;
+}
+
+.menu-grid-title {
+    font-weight: 600; /*жирность шрифта*/
+    font-size: 30px; /*размер шрифта*/
+    text-align: center; /*выровнял текст по центру*/
+    color: #1B2A49;
+    margin: 0;
+}
+
+.menu-grid-price {
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+    color: #979797;
+    margin-top: 8px;
+    margin-bottom: 22px;
+}
+
+.menu-grid-btn {
+    background-color: #FBB731;
+    border-radius: 5px;
+    padding: 10px 32px;
+    margin: 0 auto;
+    gap: 9px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.menu-grid-icon {
+    background-size: cover; /*размеры картинки, ширина и высота. Иконка подстраивается под обозначенные ниже размеры ширины и высоты.*/
+    background-repeat: no repeat;
+    display: block;
+    width: 18px;
+    height: 18px;
+}
+
+.menu-grid-text {
+    font-weight: 700;
+    font-size: 14px;
     text-transform: uppercase;
-    padding: 20px 26px;
+    text-align: center;
+}
+
+.footer {
+    background: #1E2F40;
+    color: #fff;
+    padding-top: 117px;
+    padding-bottom: 106px;
+    margin-top: 140px;
+}
+
+.footer-box {
+    display: flex;
+    justify-content: space-between;
+} 
+
+.footer-logo {
+    width: 63px;
+    height: 56px;
+}
+
+.footer-item {
+    flex: 0 0 auto;
+}
+
+.footer-item h2 {
+    font-size: 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 19px;
+    margin-top: 0;
+}
+
+.footer-item li {
+    margin-bottom: 9px;
+    font-family: 'Open Sans', sans-serif;;
+    font-size: 15px;
+    color: #FAF9F9;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.footer-item a {
+    color: #DEDEDE;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.footer-item span {
+    color: #DEDEDE;
+    display: block;
+    font-weight: 400;
+    margin-bottom: 2px;
+}
+
+.footer-tel ul {
+    font-size: 20px;
+    font-weight: 900;
+    color: #FBB731;
+    margin-top: 0;
+}
+
+.footer-tel li {
+    margin-bottom: 12px;
+}
+
+.footer-list {
+    padding-left: 0;
+    list-style-type: none;
 }
