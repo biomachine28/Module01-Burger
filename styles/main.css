@@ -26,7 +26,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-basis: 68.5%;
+    flex-basis: 75.5%;
 }
 
 .header-logo {
@@ -169,11 +169,15 @@ header {
     margin-top: 140px;
     background-size: cover;
     color: #FFFFFF;
-    background-position: center center;
+    background-position: -80px center;  /*высталяет блок по оси x, y.*/
     background-repeat: no-repeat;
     text-align: left;
     padding: 100px 100px 120px;
-    margin-bottom: 100px;
+    margin-bottom: 80px;
+}
+
+.menu {
+    padding-top: 20px; /*Сделали сверху отступ для надписи "Бургер", перед меню, чисто для красоты*/
 }
 
 .banner-title {
@@ -219,6 +223,7 @@ header {
     text-transform: uppercase; /*все буквы заглавные*/
     padding: 18px 25px; /*отступы для кнопки вверх-вниз и вправо-влево*/
     border: 1px solid #FBB731; /*обводка*/
+    transition: 0.2s; /*такой интервал смотрится лучше всего*/
 }
 
 .banner-link:hover {
@@ -411,6 +416,34 @@ margin-bottom: 23px;
     color: #DEDEDE;
 }
 
+.button-up {
+    background-color: #FBB731;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #1e2f40;
+    text-decoration: none;
+    padding: 5px 20px;
+    position: fixed; /*для того, чтобы фиксировать элемент, а птм указать, где он будет находиться*/
+    bottom: 20px;
+    right: 20px;
+    border-radius: 5px;
+    transition: 1s; /*кнопка появляется плавно*/
+} /*Стилизую кнопку, для поднятия вверх*/
+
+.button-up:hover {
+    background-color: #f37335;
+}
+
+.button-up.hidden {
+    opacity: 0; /*для того, чтобы вообще не видеть кнопку*/
+}
+
+.button-up.visible {
+    opacity: 1; /*в какой то момент при скролинге кнопка появляется. Также при значении 0.5 кнопка станет полупрорачной*/
+}
+
+
 /* Style index */
 
 .main {
@@ -538,18 +571,296 @@ margin-bottom: 23px;
     margin-top: 0;
 }
 
-.footer-tel ul {
-    font-size: 20px;
-    font-weight: 900;
-    color: #FBB731;
-    margin-top: 0;
+.burger {
+    width: 34px;
+    height: 22px;
+    background-color: transparent;
+    background-image: url(../img/burger.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
 }
 
-.footer-tel li {
-    margin-bottom: 12px;
+#modal {
+    max-width: 500px;
+    background-color: cornsilk;
+    text-align: center;
+    position: absolute;
+    top: -400px;
+    left: 0;
+    right: 0;
+    margin: 20px auto 0;
+    transition: 0.5s;
+    padding: 40px 30px;
+    box-sizing: border-box;
 }
 
-.footer-list {
-    padding-left: 0;
-    list-style-type: none;
+#modal .header-nav {
+    flex-direction: column;
+    max-width: 300px;
+    margin: 0 auto;
+    align-items: center;
 }
+
+.burger-close {
+    width: 22px;
+    height: 22px;
+    background-color: transparent;
+    background-image: url(../img/close.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+
+/*Делаем адаптив*/
+/*Responsive*/
+
+@media (min-width: 1001px){
+    .footer-list + .footer-list-tel {
+        display: none;
+    }
+} /*для того чтобы при определенном размере, номер телефона переходил в другой блок*/
+
+@media (min-width: 766px){
+    .header-burger {
+        display: none;
+    }
+}
+
+@media (max-width: 1000px){
+    .container {
+        max-width: 738px;
+    }
+    .header-logo {
+        width: 150px;
+        height: 48px;
+        background-size: contain;
+    }
+    .header-nav {
+        gap: 22px;
+    }
+    .header-item {
+        flex-basis: 75.5%;
+    }
+    .bg {
+        margin-bottom: 72px;
+    }
+    .banner-box {
+        padding: 100px 40px 120px;
+    }
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px 15px;
+    }
+    .menu-other {
+        overflow: hidden;
+        height: 558px;
+    }
+    .menu-other .menu-grid{
+        display: flex;
+        width: auto;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        padding-bottom: 50px;
+    }
+    .menu-other .menu-grid-item {
+        flex: 0 0 281px;
+    }
+    .menu-other .menu-grid-cover,
+    .menu-other .menu-grid-cover img {
+        height: 320px;
+    } 
+    .footer-tel {
+        display: none;
+    }
+    .footer-list + .footer-list-tel {
+        display: block;
+    }
+}
+
+@media (max-width: 765px){
+    nav {
+        display: none;
+    }
+    .header {
+        gap: 21px;
+    }
+}
+
+@media (max-width: 567px){
+    .breadcrumbs a {
+        font-size: 15px;
+    }
+    .title {
+        font-size: 38px;
+    }
+    .description {
+        font-size: 12px;
+    }
+    .bg {
+        padding: 55px 0;
+    }
+    .banner-box {
+        background-position: 17% center;
+        padding: 35px 24px 54px;
+    }
+}
+
+@media (max-width: 360px){
+    .header-logo {
+        width: 116px;
+        height: 37px;
+    }
+}
+
+@media (max-width: 320px){
+    .banner-box {
+        background-position: 25% center;
+    }
+}
+
+@media (max-width: 569px) {
+
+	.header {
+		padding: 20px 0 19px;
+	}
+
+	.header-logo {
+		height: 43px;
+	}
+
+	.header-item {
+	    flex-basis: 65%;
+	}
+
+	.breadcrumbs {
+		font-size: 15px;
+	}
+
+	.title {
+		font-size: 38px;
+	}
+
+	.description {
+		font-size: 12px;
+	}
+
+	.bg {
+		padding: 55px 0;
+		margin-bottom: 38px;
+	}
+
+	.banner {
+	    margin-bottom: 50px;
+	}
+
+	.banner-box {
+		background-position: 10% center;
+		padding: 35px 0 52px 24px;
+		margin-bottom: 20px;
+	}
+
+	.menu-title {
+	    font-size: 27px;
+	}
+
+	.menu-select {
+	    flex-basis: 240px;
+	    background-position: 95% center;
+	}
+
+	.menu-header {
+	    margin-bottom: 24px;
+	}
+
+	.menu-grid {
+	    gap: 18px 15px;
+	}
+
+	.menu-grid-item {
+	    margin-bottom: 20px;
+	}
+
+	.menu-grid-cover {
+	    height: 280px;
+	}
+
+	.menu-grid-cover img {
+	    height: 50vw;
+	}
+
+	.menu-grid-title {
+	    font-size: 18px;
+	}
+
+	.menu-grid-btn {
+		width: 90%;
+	}
+
+	.extra-menu {
+	    margin-top: 50px;
+	    margin-bottom: 0px;
+	}
+
+	.menu-other .menu-grid-item {
+	    flex: 0 0 45%;
+	}
+
+	.extra-menu-footer {
+	    margin-bottom: 24px;
+	}
+
+	.menu-other .menu-grid-cover {
+		height: 50vw;
+	}
+
+	.menu-other .menu-grid-cover img {
+	    height: 50vw;
+	}
+
+	.menu-other .menu-grid-btn {
+		width: 85%;
+	}
+
+	.footer-list + .footer-list-tel {
+		display: none;
+	}
+
+	.footer-tel {
+        display: block;
+    }
+
+	.footer-box {
+        display: grid;
+        grid-template-areas: 'a d'
+                             'b b'
+                             'c c';
+        gap: 21px;
+    }
+
+    .footer-item:nth-child(1) {
+        grid-area: a;
+    }
+
+    .footer-item:nth-child(2) {
+        grid-area: b;
+    }
+
+    .footer-item:nth-child(3) {
+        grid-area: c;
+    }
+
+    .footer-item:nth-child(4) {
+        grid-area: d;
+    }
+
+    .footer-item h2 {
+	    font-size: 18px;
+	}
+} 
