@@ -1,1 +1,1 @@
-# Module01-Burger
+# Burgers - тренировочный сайт от учебного проекта Annblok.ru
