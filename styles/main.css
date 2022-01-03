@@ -169,7 +169,7 @@ header {
     margin-top: 140px;
     background-size: cover;
     color: #FFFFFF;
-    background-position: -80px center;  /*высталяет блок по оси x, y.*/
+    background-position: center center;  /*высталяет блок по оси x, y.*/
     background-repeat: no-repeat;
     text-align: left;
     padding: 100px 100px 120px;
