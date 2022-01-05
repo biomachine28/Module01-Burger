@@ -1,18 +1,15 @@
 body {
     font-family: 'Nunito Sans', sans-serif;
 }
-
 .container {
     max-width: 1180px;
     margin: 0 auto;
     padding-left: 15px;
     padding-right: 15px;
 }
-
 header {
     border-bottom: 1px solid #DEDEDE;
 }
-
 .header {
     font-family: 'Open Sans', sans-serif;
     display: flex;
@@ -28,7 +25,6 @@ header {
     justify-content: space-between;
     flex-basis: 75.5%;
 }
-
 .header-logo {
     display: block;
     background-image: url(../img/Logo.svg);
@@ -37,14 +33,12 @@ header {
     background-repeat: no-repeat;
     background-size: cover;
 }
-
 .header-nav {
     display: flex;
     list-style-type: none;
     padding-left: 0;
     gap: 46px;
 }
-
 .header-nav a {
     font-weight: 600;
     font-size: 20px;
@@ -55,7 +49,6 @@ header {
 .header-nav a:hover {
     color: #FFC725;
 }
-
 .header-nav a::after {
     content: '';
     width: 100%;
@@ -64,11 +57,9 @@ header {
     background: transparent;
     display: block;
 }
-
 .header-nav a.active::after {
     background: #FFC725;
 }
-
 .button {
     display: flex;
     align-items: center;
@@ -78,11 +69,9 @@ header {
     gap: 10px;
     cursor: pointer;
 }
-
 .button-item {
     position: relative;
 }
-
 .button-count {
     font-weight: 700;
     font-size: 13px;
@@ -97,13 +86,11 @@ header {
     bottom: 3px;
     right: -4px;
 }
-
 .batton-text {
     color: #443737;
     font-weight: 700;
     font-size: 15px;
 }
-
 .bg {
     text-align: center;
     color: #FFFFFF;
@@ -113,7 +100,6 @@ header {
     padding: 147px 0;
     margin-bottom: 140px;
 }
-
 .breadcrumbs {
     padding-left: 0;
     margin-top: 0;
@@ -122,40 +108,33 @@ header {
     justify-content: center;
     gap: 7px;
 }
-
 .breadcrumbs a {
     color: #dedede;
     font-size: 15px;
     font-family: 'Open Sans', sans-serif;
     text-decoration: none;
 }
-
 .breadcrumbs a:hover {
     color: #FFC725;
 }
-
 .breadcrumbs a::before {
     content: "/";
     position: relative;
     left: -3px;
     pointer-events: none;
 }
-
 .breadcrumbs a:hover::before {
     color: #dedede;
 }
-
 .breadcrumbs li:first-child a::before {
     display: none;
 }
-
 .title {
     font-weight: 700;
     font-size: 79px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
-
 .description {
     font-family: 'Open Sans', sans-serif;
     font-size: 15px;
@@ -174,18 +153,15 @@ header {
     margin-bottom: 80px;
     color: #FFFFFF;
 }
-
 .menu {
     padding-top: 20px; /*Сделали сверху отступ для надписи "Бургер", перед меню, чисто для красоты*/
 }
-
 .banner-title {
     font-weight: 900;
     font-size: 60px;
     margin-top: 0; /*title по умолчанию имеет отступ сверху и снизу. Поэтому это значение нужно обнулить*/
     margin-bottom: 12px; /*После этого устанавливается то значение, которое необходимо для сдвига текста*/
 }
-
 .banner-title span{
     font-family: 'Open Sans', sans-serif; /*Шрифт*/
     background-color: #F37335; /*Цвет фона*/
@@ -199,7 +175,6 @@ header {
     padding: 5px 0;
     margin-bottom: 9px; /*Для того, чтобы сделать небольшое расстояние между скидка и -30*/
 }
-
 .banner-text {
     color: #FAF9F9;
     font-family: 'Open Sans', sans-serif;
@@ -210,8 +185,6 @@ header {
     margin-bottom: 33px;
     margin-top: 0; /*чтобы удобнее было вычислить расстояние между верхним блоком*/
 }
-
-
 .banner-link {
     background-color: #FBB731;
     border-radius: 5px; /*Для того, чтобы закруглить кнопку. Значение можно найти в фигме*/
@@ -224,19 +197,16 @@ header {
     border: 1px solid #FBB731; /*обводка*/
     transition: 0.2s; /*такой интервал смотрится лучше всего*/
 }
-
 .banner-link:hover {
     background-color: transparent; /*цвет фона кнопки меняется на прозрачный*/
     color: #FBB731; /*цвет надписи меняется на желтый*/
 }
-
 .menu-header {
     display: flex; /*элементы становятся рядом друг с другом. Были один под другим*/
     align-items: center; /*элементы ставит по центру*/
     justify-content: space-between; /*делает одинаковое расстояние между элементами, то есть разводит в разные стороны*/
     margin-bottom: 34px;
 }
-
 .menu-title {
     font-size: 44px; /*размер шрифта*/
     font-weight: 700; /*жирность шрифта, или начертание*/
@@ -245,7 +215,6 @@ header {
     color: #1B2A49; /*цвет шрифта*/
     margin: 0;
 }
-
 .menu-select {
     border: 1px solid #DEDEDE; /*толщина и цвет рамки*/
     padding: 13px 30px; /*отступы*/
@@ -262,7 +231,6 @@ header {
     background-repeat: no-repeat; /*оставляет только одну стрелочку, так как их изначально было много*/
     background-position: 89% center; /*стрелочка встала не там, где нужно, поэтому указываем ее положение по оси x и y*/
 }
-
 .menu-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /*делаю 3 колонки*/
@@ -270,7 +238,6 @@ header {
     margin-bottom: 100px; /*позволяет делать нижний отступ*/
     gap: 50px 20px; /*расстояние между блоками сверху-вниз и побокам*/
 }
-
 .menu-grid-cover {
     width: 100%; /*ширина*/
     height: 430px; /*высота*/
@@ -278,7 +245,6 @@ header {
     overflow: hidden; /*картинка не будет вылазить за назначенные границы*/
     margin-bottom: 23px;
 }
-
 .menu-grid-cover img {
     position: absolute;
     left: 50%;
@@ -289,7 +255,6 @@ header {
     width: 100%;
     height: 430px;
 }
-
 .menu-grid-title {
     font-weight: 600; /*жирность шрифта*/
     font-size: 30px; /*размер шрифта*/
@@ -297,7 +262,6 @@ header {
     color: #1B2A49;
     margin: 0;
 }
-
 .menu-grid-price {
     font-weight: 700;
     font-size: 20px;
@@ -306,7 +270,6 @@ header {
     margin-top: 8px;
     margin-bottom: 22px;
 }
-
 .menu-grid-btn {
     background-color: #FBB731;
     border-radius: 5px;
@@ -319,11 +282,9 @@ header {
     align-items: center;
     cursor: pointer;
 }
-
 .menu-grid-btn:hover {
     background: #F37335;
 }
-
 .menu-grid-icon {
     background-size: cover; /*размеры картинки, ширина и высота. Иконка подстраивается под обозначенные ниже размеры ширины и высоты.*/
     background-repeat: no repeat;
@@ -331,14 +292,12 @@ header {
     width: 18px;
     height: 18px;
 }
-
 .menu-grid-text {
     font-weight: 700;
     font-size: 14px;
     text-transform: uppercase;
     text-align: center;
 }
-
 .footer {
     background: #1E2F40;
     color: #fff;
@@ -346,18 +305,15 @@ header {
     padding-bottom: 106px;
     margin-top: 140px;
 }
-
 .footer-box {
     display: flex;
     justify-content: space-between;
     gap: 20px;
-} 
-
+}
 .footer-logo {
     width: 63px;
     height: 56px;
 }
-
 .footer-item h2 {
     font-size: 20px;
     font-weight: 800;
@@ -366,7 +322,6 @@ header {
     margin-top: 0;
     line-height: 1.5;
 }
-
 .footer-list li {
     margin-bottom: 9px;
     font-family: 'Open Sans', sans-serif;;
@@ -375,47 +330,38 @@ header {
     font-weight: 700;
     line-height: 24px;
 }
-
 .footer-list a {
     color: #DEDEDE;
     text-decoration: none;
     font-weight: 400;
 }
-
 .footer-item span {
     color: #DEDEDE;
     display: block;
     font-weight: 400;
     margin-bottom: 2px;
 }
-
 .footer-list-tel {
     margin-top: 0;
 }
-
 .footer-list-tel a {
     font-size: 20px;
     font-weight: 900;
     color: #FBB731;   
 }
-
 .footer-list-tel li {
     margin-bottom: 12px;
 }
-
 .footer-list {
     padding-left: 0;
     list-style-type: none;
 }
-
 .footer-list a:hover {
     color: #FBB731;
 }
-
 .footer-list-tel a:hover {
     color: #DEDEDE;
 }
-
 .button-up {
     background-color: #FBB731;
     font-weight: 700;
@@ -430,19 +376,15 @@ header {
     border-radius: 5px;
     transition: 1s; /*кнопка появляется плавно*/
 } /*Стилизую кнопку, для поднятия вверх*/
-
 .button-up:hover {
     background-color: #f37335;
 }
-
 .button-up.hidden {
     opacity: 0; /*для того, чтобы вообще не видеть кнопку*/
 }
-
 .button-up.visible {
     opacity: 1; /*в какой то момент при скролинге кнопка появляется. Также при значении 0.5 кнопка станет полупрорачной*/
 }
-
 
 /* Style index */
 
@@ -619,7 +561,6 @@ header {
     top: 20px;
     right: 20px;
 }
-
 
 /*Делаем адаптив*/
 /*Responsive*/
@@ -820,8 +761,6 @@ header {
 
 /*vw (viewport width) - процентная величина от общей ширины области просмотра. При уменьшении экрана область просмотра уменьшается автоматически. Без нее нужно было бы подключать много @media и адаптировать под каждый, а этот метод не приветствуется.*/
 /*vh (viewport height) - от высоты*/
-
-
 
 @media (max-width: 360px){
     .header-logo {
