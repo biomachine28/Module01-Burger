@@ -17,14 +17,14 @@
 	<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
 	<link rel="icon" sizes="16x16" href="images/favicon/favicon.ico">
 	<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-	<link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">    
 </head>
 <body>
     <header id="headerTop">
         <div class="container">
             <div class="header">
                 <div class="header-burger">
-                    <button class="burger" onclick="openModal()"></button>
+                    <button class="burger" onclick="openModal()"></button>  <!--Данная кнопка открывает модальное окно-->
                 </div>
                 <div class="header-item">
                     <a href="index.html" class="header-logo"></a>
@@ -53,7 +53,7 @@
                 <li><a href="index.html">Главная</a></li>
                 <li><a href="#">Меню</a></li>
             </ul>
-            <h1 class="title">Наше меню</h1>
+            <h1 class="title">Наше Меню</h1>
             <p class="description">Выбирай из предложенного ассортимента и мы доставим блюдо в течении часа</p>
         </div>    
     </div>
@@ -265,7 +265,7 @@
         </div>
     </footer>
     <a href="#headerTop" class="button-up hidden" id="btnUp">Наверх</a>
-    <div id="modal" class="modal">
+    <div id="modal" class="modal"> <!--Разметка для модального окна. Ниже добавлен скрипт для модального окна - menu-->
         <ul class="header-nav">
             <li><a href="index.html">Главная</a></li>
             <li><a href="#" class="active">Меню</a></li>
@@ -318,7 +318,7 @@
         }
 
         /*menu*/
-        function openModal() {
+            function openModal() {
             document.getElementById("modal").style.top = "0px";
         }
 
