@@ -796,7 +796,7 @@ header {
     }
     .footer-box {
         display: grid;
-        grid-template-columns: 30% 70%;
+        grid-template-columns: 30% 1fr;
         grid-template-areas:
             "logo tel" 
             "link link" 
